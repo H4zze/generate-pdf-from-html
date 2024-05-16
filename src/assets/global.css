@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts/fonts.css";
+
+@layer base {
+  body {
+    @apply text-black;
+  }
+}

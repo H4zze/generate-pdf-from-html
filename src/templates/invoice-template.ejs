@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- css %>
+    <style>
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0 1cm;
+      }
+    </style>
+  </head>
+  <body class="bg-white h-dvh flex flex-col">
+    <main
+      class="flex-1 flex flex-col gap-5 w-[900px] mx-auto bg-white py-10 pb-12"
+    >
+      <section class="flex gap-6">
+        <div>
+          <img src="<%- logo %>" width="410" />
+        </div>
+        <div
+          class="flex-1 flex flex-col gap-3 justify-between border border-black px-4 py-2 rounded-lg"
+        >
+          <div class="flex items-center justify-between gap-10">
+            <div class="text-3xl font-semibold">Faktura</div>
+            <div
+              class="flex-1 bg-blue-100 rounded-lg py-4 px-4 h-full flex items-center justify-between font-semibold text-2xl"
+            >
+              <div class="">Att betala</div>
+              <div>75 000 kr</div>
+            </div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex flex-col gap-0 whitespace-nowrap">
+              <div class="text-sm font-semibold">OCR-nummer</div>
+              <div class="text-base"><%- data.ocrNumber %></div>
+            </div>
+            <div class="flex flex-col gap-0 whitespace-nowrap">
+              <div class="text-sm font-semibold">Fakturanr.</div>
+              <div class="text-base"><%- data.invoiceNumber %></div>
+            </div>
+            <div class="flex flex-col gap-0 whitespace-nowrap">
+              <div class="text-sm font-semibold">Fakturadatum</div>
+              <div class="text-base"><%- data.invoiceDate %></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex gap-6">
+        <div class="w-[410px] h-full"></div>
+        <div class="flex-1 flex flex-col text-lg font-normal">
+          <div>Etimo AB</div>
+          <div>Dalagatan 7</div>
+          <div>111 23 Stockholm</div>
+          <div>Sverige</div>
+        </div>
+      </section>
+
+      <section class="flex gap-2">
+        <div class="bg-blue-100 rounded-lg py-3 px-4 flex gap-4">
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Ert kundnr.</div>
+            <div class="text-sm font-normal">123456</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Er referens</div>
+            <div class="text-sm font-normal">André Hansson</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Vår referens</div>
+            <div class="text-sm font-normal">Faktureservice</div>
+          </div>
+        </div>
+        <div
+          class="bg-blue-100 rounded-lg py-3 px-4 flex-1 flex gap-3 justify-between"
+        >
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Förfallodag</div>
+            <div class="text-sm font-normal">2024-05-30</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Betalningsvillkor</div>
+            <div class="text-sm font-normal">30 dagar</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Dröjsmålsränta</div>
+            <div class="text-sm font-normal">500,00 %</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-xs font-semibold">Betalningspåminnelse</div>
+            <div class="text-sm font-normal">Debiteras med 500,00 SEK</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flex-1 flex flex-col">
+        <div class="flex justify-between px-4 text-sm font-medium">
+          <div>Beskrivning</div>
+          <div>Totalt exkl. moms</div>
+        </div>
+        <section
+          class="border border-black rounded-lg py-3 px-4 flex flex-col gap-2 flex-1 text-sm font-normal"
+        >
+          <div class="flex gap-4">
+            <div class="flex-1">Radbeskrivning</div>
+            <div>12000</div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-1">Radbeskrivning</div>
+            <div>12000</div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-1">Radbeskrivning</div>
+            <div>12000</div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-1">Radbeskrivning</div>
+            <div>12000</div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-1">Radbeskrivning</div>
+            <div>12000</div>
+          </div>
+        </section>
+      </div>
+
+      <section
+        class="bg-blue-100 rounded-lg py-3 px-4 flex flex-col gap-2 text-sm font-normal"
+      >
+        <div class="grid grid-cols-[repeat(5,_1fr)_20%] text-sm">
+          <div class="font-semibold">Totalt exkl. moms</div>
+          <div class="font-semibold">Momssats</div>
+          <div class="font-semibold">Moms</div>
+          <div class="font-semibold">Öresutj.</div>
+          <div class="font-semibold">Valuta</div>
+          <div class="font-semibold text-right">Totalt inkl. moms</div>
+
+          <div>60 000</div>
+          <div>25 %</div>
+          <div>15 000</div>
+          <div>0</div>
+          <div>SEK</div>
+          <div class="text-right">75 000</div>
+        </div>
+      </section>
+
+      <section
+        class="grid grid-cols-3 justify-items-left text-xs font-normal px-8"
+      >
+        <div class="inline-flex flex-col gap-2">
+          <div>Utbetalning AB</div>
+          <div>Gatan 1, 123 45 Stad, Sverige</div>
+          <div>Tel: +46(0)701234567</div>
+          <div>info@utbetalning.com</div>
+        </div>
+
+        <div class="inline-flex flex-col gap-2">
+          <div>Org.nr/Momsreg.nr</div>
+          <div>123456-1234</div>
+          <div>SE12345678900</div>
+          <div>Godkänd för F-skatt</div>
+        </div>
+
+        <div class="inline-flex flex-col gap-2">
+          <div><span class="font-semibold">Bankgiro</span> 123-4567</div>
+          <div><span class="font-semibold">Swift</span> ________</div>
+          <div>
+            <span class="font-semibold">IBAN</span> SE1230000000123456789
+          </div>
+          <div>
+            <span class="font-semibold">Bankkonto nr</span> 1234 12 345 67
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
