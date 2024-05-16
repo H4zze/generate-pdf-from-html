@@ -63,8 +63,6 @@ export const initServer = async (host: string, port: number) => {
         preferCSSPageSize: true,
       });
 
-      pdfData.invoiceNumber++;
-
       await browser.close();
       reply.type("application/pdf").send(pdf);
     }
